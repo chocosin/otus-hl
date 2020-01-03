@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Last Usernames</title>
+</head>
+<body>
+<ul>
+    {{range .}}
+        <li>
+            <a href="/user/{{.}}">{{.}}</a>
+        </li>
+    {{end}}
+</ul>
+</body>
+</html>

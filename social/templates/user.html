@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.FirstName}} {{.LastName}}</title>
+</head>
+<body>
+{{if .IsMe}}
+    <div>My page</div>
+    <form action="/logout" method="post">
+        <input type="submit" value="logout"/>
+    </form>
+{{end}}
+<div>
+    Full name: {{.FirstName}} {{.LastName}}
+</div>
+<div>
+    Username: {{.Username}}
+</div>
+<div>
+    Age: {{.Age}}
+</div>
+<div>
+    City: {{.City}}
+</div>
+<div>
+    <div>Interests:</div>
+    <ul>
+        {{range .Interests}}
+            <li>
+                {{.}}
+            </li>
+        {{end}}
+    </ul>
+</div>
+
+<a href="/last">last registered</a>
+</body>
+</html>

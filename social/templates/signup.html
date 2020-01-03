@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>sign up</title>
+</head>
+<body>
+
+<a href="/index">index</a>
+<a href="/login">login</a>
+
+{{if .Err }}
+    <div id="error" style="color: red">
+        {{.Err}}
+    </div>
+{{end}}
+
+<form action="/signup" method="post">
+
+    Username:
+    <br/>
+    <input type="text" name="Username" required minlength="3" value="{{.Username}}">
+    <br/>
+    Password:
+    <br/>
+    <input type="password" name="Password" required minlength="1">
+    <br/>
+    First Name:
+    <br/>
+    <input type="text" name="FirstName" required minlength="2" value="{{.FirstName}}">
+    <br/>
+
+    Last Name:
+    <br/>
+    <input type="text" name="LastName" required minlength="2" value="{{.LastName}}">
+    <br/>
+
+    Age:
+    <br/>
+    <input type="number" name="Age" required min="18" value="{{.Age}}">
+    <br/>
+
+    Gender:
+    <br/>
+    <input type="radio" name="Gender" value="male" {{if eq .Gender "male"}} checked {{end}}> Male<br>
+    <input type="radio" name="Gender" value="female" {{if eq .Gender "female"}} checked {{end}}> Female<br>
+    <input type="radio" name="Gender" value="other" {{if eq .Gender "other"}} checked {{end}}> Other
+    <br/>
+
+    City:
+    <br/>
+    <input type="text" name="City" required minlength="2" value="{{.City}}">
+    <br/>
+    Things, you are interested in (separated by comma):
+    <br/>
+    <input type="text" name="Interests" value="{{.Interests}}">
+    <br/>
+    <br/>
+
+    <input type="submit" value="Sign up">
+</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>sign up</title>
+</head>
+<body>
+
+{{if .HintText }}
+    <div id="error" {{if .IsError}} style="color: red" {{end}}>
+        {{.HintText}}
+    </div>
+{{end}}
+
+<form action="/login" method="post">
+
+    Username:
+    <br/>
+    <input type="text" name="Username" required minlength="1" value="{{.Username}}">
+    <br/>
+
+    Password:
+    <br/>
+    <input type="password" name="Password" required minlength="1">
+    <br/>
+
+    <input type="submit" value="log in">
+</form>
+</body>
+</html>
