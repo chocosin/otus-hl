@@ -6,6 +6,8 @@
 
 `/last` - last registered users
 
+`/user/qqq` - page of user with username qqq
+
 Only available for non-registered users:
 
 `/signup`
