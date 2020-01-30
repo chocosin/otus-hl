@@ -30,3 +30,10 @@ create table book_genres
   genre_id int,
   primary key (book_id, genre_id)
 );
+
+create table book_comments
+(
+    book_id bigint,
+    comment_id bigint primary key,
+    comment varchar(100)
+)

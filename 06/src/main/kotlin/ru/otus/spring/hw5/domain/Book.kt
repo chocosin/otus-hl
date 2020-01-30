@@ -30,7 +30,15 @@ data class Book(
                 joinColumns = [JoinColumn(name = "book_id", referencedColumnName = "id")],
                 inverseJoinColumns = [JoinColumn(name = "genre_id", referencedColumnName = "id")]
         )
-        var authors: MutableSet<Author> = mutableSetOf()
+        var authors: MutableSet<Author> = mutableSetOf(),
+
+        @OneToMany(
+                fetch = FetchType.LAZY,
+                cascade = [CascadeType.MERGE, CascadeType.REFRESH, CascadeType.REMOVE],
+                orphanRemoval = true,
+                mappedBy = "book"
+        )
+        var comments: List<BookComment> = mutableListOf()
 ) {
     constructor() : this(0L, "", mutableSetOf(), mutableSetOf())
 }
