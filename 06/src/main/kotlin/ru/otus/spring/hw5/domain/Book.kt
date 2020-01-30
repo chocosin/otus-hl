@@ -12,7 +12,7 @@ data class Book(
 
         @ManyToMany(
                 fetch = FetchType.EAGER,
-                cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH]
+                cascade = [CascadeType.MERGE, CascadeType.REFRESH]
         )
         @JoinTable(
                 name = "book_authors",
@@ -23,7 +23,7 @@ data class Book(
 
         @ManyToMany(
                 fetch = FetchType.EAGER,
-                cascade = [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH]
+                cascade = [CascadeType.MERGE, CascadeType.REFRESH]
         )
         @JoinTable(
                 name = "book_genres",
